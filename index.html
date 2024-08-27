@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <main class="encriptador">
+        <img class="encriptador__logo" src="./assets/Logo.png" alt="Logo Alura" >
+        <section class="encriptador__principal">
+            <textarea autofocus id="encriptador__principal__texto" placeholder="Ingrese el texto aqui"></textarea>
+            <p class="encriptador__principal__mensaje">
+                <img class="encriptador__principal__mensaje__alerta" src="./assets/alerta.png" alt="Signo de alerta">
+                Solo letras minúsculas y sin acentos
+            </p>
+            <div class="encriptador__principal__botones">
+                <button id="boton__encriptar" class="encriptador__principal__botones__boton">Encriptar</button>
+                <button id="boton__desencriptar" class="encriptador__principal__botones__boton">Desencriptar</button>
+            </div>
+        </section>
+        <section class="encriptador__resultado">
+        </section>
+    </main>
+    <footer class="footer">
+        Desarrollado por Daniel Steven Polo Lozano
+    </footer>
+    <script src="./app.js"></script>
+</body>
+</html>

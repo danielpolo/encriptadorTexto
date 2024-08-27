@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root{
+    --color-primario:#0A3871;
+    --color-fondo: #F3F5FC;
+    --color-gris-claro:#495057;
+    --tamano-objetos-resultados:84%;
+    --fuente-principal: "Inter", sans-serif;
+}
+::placeholder{
+    color: #0A3871;
+}
+:focus{
+    outline: 0 none;
+}
+body{
+    box-sizing: border-box;
+    background-color: var(--color-fondo);
+}
+.encriptador{
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+}
+.encriptador__logo{
+    max-width: 7.5rem; 
+    max-height: 3rem;
+}
+.encriptador__principal{
+    padding: 6% 2% 2% 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 47.22%;
+}
+#encriptador__principal__texto, #encriptador__resultado__texto{
+    background-color: var(--color-fondo);
+    font-family: var(--fuente-principal);
+    text-align: left;
+    font-weight: 400;
+    font-size: 2rem;
+    height: 50vh;
+    resize: none;
+    border: 0px;
+}
+.encriptador__principal__mensaje{
+    display: flex;
+    align-items: center;
+    font-family: var(--fuente-principal);
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    color: var(--color-gris-claro);
+}
+.encriptador__principal__mensaje__alerta{
+    max-width: 1rem; 
+    max-height: 1rem;
+}
+.encriptador__principal__botones{
+    display: flex;
+    gap: 1.5rem;
+}
+.encriptador__principal__botones__boton, .encriptador__resultado__boton{
+    width: 48.24%;
+    color: white;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: var(--color-primario);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+.encriptador__principal__botones__boton:disabled, .encriptador__resultado__boton:disabled{
+    background-color: #D8DFE8;
+    color: var(--color-primario);
+    border: 0.0625rem solid var(--color-primario);
+}
+.encriptador__resultado{
+    height: auto;
+    width: 27.8%;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0rem 1.5rem 2rem -0.5rem #000000;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#encriptador__resultado__texto{
+    font-size: 1.5rem;
+    width: var(--tamano-objetos-resultados);
+    color: var(--color-gris-claro);
+    background-color: white;
+}
+.encriptador__resultado__boton{
+    width: var(--tamano-objetos-resultados);
+
+}
+.encriptador__resultado__imagen{
+    width: var(--tamano-objetos-resultados);
+    height: 19rem;
+}
+.encriptador__resultado__mensaje{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    width: var(--tamano-objetos-resultados);
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-gris-claro);
+}
+.encriptador__resultado__mensaje__resaltar{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #343A40;
+}
+.footer{
+    background-color: var(--color-primario);
+    padding: 24px;
+    text-align: center;
+    color: white;
+}
+@media (max-width: 768px){
+    .encriptador{
+        flex-direction: column;
+        align-items: center;
+    }
+    .encriptador__logo{
+        align-self: flex-start;
+    }
+    .encriptador__principal, .encriptador__resultado{
+        width: 89.6%;
+    }
+    .encriptador__resultado__mensaje{
+        padding: 4.65%;
+        gap: 4.65%;
+        width: auto;
+    }
+    .encriptador__principal__botones__boton, .encriptador__resultado__boton{
+        width: 48.25%;
+    }
+}
+@media (max-width: 375px){
+    .encriptador__principal, .encriptador__resultado{
+        width: 91.47%;
+    }
+    .encriptador__principal__botones__boton{
+        width: 100%;
+    }
+    .encriptador__resultado__boton{
+        width: 74.4%;
+    }
+    .encriptador__principal__botones{
+        flex-direction: column;
+        align-items: center;
+    }
+}
