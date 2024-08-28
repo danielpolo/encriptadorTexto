@@ -11,10 +11,12 @@ cargarEventos();
 function modificaResultado(cambio) {
     moduloResultado.innerHTML=cambio;
 }
-
+function obtenerItemId(id) {
+    return document.getElementById(id);
+}
 function copiar() {
-    document.getElementById("boton__copy").addEventListener("click", function() {
-        let resultado = document.getElementById("encriptador__resultado__texto");
+    obtenerItemId("boton__copy").addEventListener("click", function() {
+        let resultado = obtenerItemId("encriptador__resultado__texto");
         resultado.select();
         resultado.setSelectionRange(0, 99999); // Para dispositivos móviles
         // Copia el texto al portapapeles
@@ -28,7 +30,7 @@ function cargarEventos() {
 
 }
 function validaTextoIngresado(id,evento) {
-    document.getElementById(id).addEventListener(evento, function() {
+    obtenerItemId(id).addEventListener(evento, function() {
         this.value = this.value.toLowerCase();
         this.value = this.value.replace(/[^a-z\s]/g, '');
     });
@@ -44,8 +46,8 @@ function encriptarDesencriptarTexto(texto,busqueda,remplazo) {
 function botonesEncriptarDesencriptar(id) {
     let vocales=["e","i","a","o","u"];
     let encriptacion=["enter","imes","ai","ober","ufat"];
-    document.getElementById(id).addEventListener("click", function() {
-        let texto = document.getElementById("encriptador__principal__texto").value;
+    obtenerItemId(id).addEventListener("click", function() {
+        let texto = obtenerItemId("encriptador__principal__texto").value.trim();
         if (texto!="") {
             modificaResultado(conntenidoResultado);
             let textoConvertido="";
@@ -54,9 +56,12 @@ function botonesEncriptarDesencriptar(id) {
             }else{
                 textoConvertido = encriptarDesencriptarTexto(texto,encriptacion,vocales);
             }
-            document.getElementById("encriptador__resultado__texto").value = textoConvertido;
+           obtenerItemId("encriptador__resultado__texto").value = textoConvertido;
             copiar();
         }else{
+            let textoPrincipal=obtenerItemId("encriptador__principal__texto")
+            textoPrincipal.value="";
+            textoPrincipal.focus();
             modificaResultado(contenidoResultadoVacio);
         }
     });

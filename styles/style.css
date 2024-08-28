@@ -134,6 +134,9 @@ body{
     .encriptador__principal, .encriptador__resultado{
         width: 89.6%;
     }
+    .encriptador__resultado__imagen{
+        display: none;
+    }
     .encriptador__resultado__mensaje{
         padding: 4.65%;
         gap: 4.65%;
